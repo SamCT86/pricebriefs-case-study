@@ -91,3 +91,9 @@ More detail: [docs/HOW_I_BUILD_WITH_AI.md](docs/HOW_I_BUILD_WITH_AI.md)
 - product-market fit.
 
 The source implementation remains private. This repository exposes the decision quality and implementation proof without publishing the collection/runtime blueprint.
+
+## Related engineering case studies
+
+- [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) — artifact-bound verification and recheck discipline.
+- [Billable Meetings OS](https://github.com/SamCT86/billable-meetings-os-case-study) — contract + evidence automation with a real review state.
+- [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — verified outcomes before broader reliability claims.
