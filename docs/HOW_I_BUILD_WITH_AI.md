@@ -1,44 +1,42 @@
-# How I build with AI
+# AI in the PriceBriefs workflow
 
-AI is part of the implementation workflow, but it is not allowed to become the source of truth for the pricing decision.
+AI is useful for moving quickly across implementation and review. It is not allowed to become the source of truth for a pricing decision.
 
-## Where AI helps
+## Where it helps
 
-I use AI to accelerate:
+- exploring implementation approaches;
+- drafting and revising code candidates;
+- investigating data/integration behavior;
+- generating edge cases and tests;
+- reviewing assumptions and documentation.
 
-- solution exploration;
-- implementation drafts and revisions;
-- integration investigation;
-- edge-case generation;
-- test scaffolding;
-- documentation and review.
+## What stays explicit
 
-## What remains explicit
-
-For PriceBriefs, the system still needs an explicit owner for:
+The system still needs a human-owned definition of:
 
 - product identity;
 - source qualification;
-- data freshness and availability;
-- which observations are eligible for comparison;
-- what decision states exist;
-- when the correct result is insufficient evidence;
-- whether a recommendation is stronger than the evidence behind it.
+- freshness and availability;
+- which observations may influence a comparison;
+- which decision states exist;
+- when the correct output is `INSUFFICIENT_EVIDENCE`.
 
-## Quality model
+## Working loop
 
 ```text
-AI-assisted candidate
-        ↓
-identity + source checks
-        ↓
+commercial question
+      ↓
+identity + source constraints
+      ↓
+AI-assisted implementation
+      ↓
 deterministic validation
-        ↓
+      ↓
 bounded decision
-        ↓
-evidence review
-        ↓
-accept / refuse / revise
+      ↓
+evidence review / refusal
 ```
 
-The point is not to remove human judgment. The point is to use AI to accelerate the work while keeping the commercial decision inspectable and constrained by evidence.
+The point is not to remove judgment. The point is to make AI useful **inside** a system whose evidence boundary remains inspectable.
+
+For concrete implementation evidence, see [../PROOF.md](../PROOF.md).

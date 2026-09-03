@@ -1,0 +1,20 @@
+[
+  {
+    "example_type": "synthetic_redacted_portfolio_example",
+    "product": "example-product-a",
+    "identity_status": "MATCHED",
+    "source_status": "QUALIFIED",
+    "eligible_in_stock_peers": 2,
+    "decision": "WATCH",
+    "reason": "A reviewable market-position gap survives identity, source and eligibility checks."
+  },
+  {
+    "example_type": "synthetic_redacted_portfolio_example",
+    "product": "example-product-b",
+    "identity_status": "MATCHED",
+    "source_status": "QUALIFIED",
+    "eligible_in_stock_peers": 0,
+    "decision": "INSUFFICIENT_EVIDENCE",
+    "reason": "No clean in-stock comparable peer supports a stronger price-gap conclusion."
+  }
+]

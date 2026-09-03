@@ -1,93 +1,93 @@
-# PriceBriefs — Public Engineering Case Study
+# PriceBriefs — evidence-backed competitive price intelligence
 
+**Sarmad Tawfeek · AI systems · technical implementation · automation**  
 **Status:** Building / technical falsification  
-**Focus:** Evidence-backed competitive price intelligence  
 **Portfolio:** https://sarmadtawfeek.se/
 
-> This repository explains the problem, system boundary and engineering decisions. The implementation source remains private by design.
+Price data is easy to collect and easy to misuse. PriceBriefs is built around a stricter rule:
 
-## The problem
-
-Competitive price data is easy to collect and surprisingly easy to misuse.
-
-A price difference is not decision-grade when the products do not match, the source evidence is weak, the item is unavailable or stale, or the system quietly fills gaps with assumptions.
-
-PriceBriefs is built around a stricter invariant:
+> **An observation is not a commercial decision until product identity, source quality and evidence eligibility survive review.**
 
 ```text
 OBSERVATION → TRUTH → COMMERCIAL IMPORTANCE → DECISION → EVIDENCE
 ```
 
-A recommendation should not outrun the identity and source evidence supporting it.
+## What exists today
 
-## System at a glance
+The private implementation currently includes a deterministic **three-product public sample** derived from hash-bound artifact evidence rather than hand-written demo observations.
+
+That sample deliberately produces different outcomes:
+
+- two bounded `WATCH` decisions;
+- one `INSUFFICIENT_EVIDENCE` refusal because no clean in-stock peer supports a stronger conclusion.
+
+The implementation also includes:
+
+- TypeScript contracts and deterministic validation;
+- a manifest-driven batch builder;
+- deterministic rendering of generated briefs;
+- CI with strict TypeScript checking and dependency-free Node tests;
+- verification that generated output is current;
+- permission-based sample intake and isolated operator-workspace preparation;
+- hash checks around prepared and delivered artifacts.
+
+**Start with the evidence layer:** [PROOF.md](PROOF.md)
+
+## The decision boundary
 
 ```text
 Market observation
        ↓
-Product identity + source checks
+Product identity check
+       ↓
+Source + availability + freshness checks
        ↓
 Commercial interpretation
        ↓
-Bounded review decision
+WATCH / other bounded review state / INSUFFICIENT_EVIDENCE
        ↓
-Evidence attached to the decision
+Evidence-bound brief
 ```
 
-## What I want a technical reviewer to inspect
+The important engineering choice is that the system is allowed to produce **less output** when the evidence is weak.
 
-- **Identity before comparison.** Cross-product or weakly matched observations should not drive a pricing decision.
-- **Evidence before recommendation.** A believable number is not enough; the decision should remain traceable to supporting observations.
-- **Fail closed on weak inputs.** Stale, unavailable, mismatched or incomplete evidence should reduce or stop the decision path.
-- **Observation and decision are separate layers.** The system should not collapse raw collection into commercial action.
-- **Human review can be the correct automation boundary.** Automation is valuable when it improves a decision without pretending every decision should be autonomous.
+## A failure case that matters
 
-## AI-native build approach
+Suppose a competitor page is reachable and contains a lower number, but the product identity is ambiguous or the only comparable peer is out of stock.
 
-AI helps me move quickly across exploration, implementation, integration investigation, test generation and review. For a system like PriceBriefs, that speed is only useful if the data and decision boundaries remain explicit.
+The easy implementation produces a price gap anyway.
 
-```text
-Business question
-      ↓
-Evidence + identity constraints
-      ↓
-AI-assisted exploration / implementation
-      ↓
-Deterministic validation
-      ↓
-Bounded decision
-      ↓
-Evidence review / refusal state
-```
+PriceBriefs instead refuses to let that observation drive the review. In the current three-product sample, one case intentionally ends as `INSUFFICIENT_EVIDENCE` because there is no clean in-stock peer.
+
+That refusal is product behavior, not an error to hide.
+
+## Where AI fits
+
+AI accelerates implementation, integration investigation, edge-case generation and review. It does not get authority to repair weak evidence into a stronger commercial answer.
+
+I keep product identity, source qualification, eligibility rules and the allowed decision states explicit so generated output can be challenged against evidence.
 
 More detail: [docs/HOW_I_BUILD_WITH_AI.md](docs/HOW_I_BUILD_WITH_AI.md)
 
 ## Technical context
 
-Current project evidence supports work with:
+`TypeScript` · `Node.js` · `deterministic contracts` · `SHA-256 evidence binding` · `CI` · `automated tests`
 
-`TypeScript` · `Node.js` · `deterministic data contracts` · `artifact hashing` · `CI / evidence validation`
+## Inspect the proof
 
-These are implementation contexts, not self-rated proficiency badges.
+- [Observable proof](PROOF.md)
+- [Sanitized decision examples](examples/sanitized-brief-decisions.json)
+- [System view](docs/SYSTEM_VIEW.md)
+- [Engineering decisions](docs/DECISIONS.md)
+- [Verification approach](docs/VERIFICATION.md)
+- [Public / private boundary](PUBLIC_BOUNDARY.md)
 
-## Verification mindset
-
-The system direction uses evidence-bound artifacts and deterministic validation so a public or internal brief can be traced back to the observations that justify it. Weak evidence should never be cosmetically repaired into a stronger decision.
-
-See [docs/VERIFICATION.md](docs/VERIFICATION.md).
-
-## Current truth boundary
-
-This repository does **not** claim:
+## Not claimed
 
 - customer outcome metrics;
-- autonomous pricing authority;
+- autonomous price-changing authority;
 - broad production-scale ingestion;
-- universal retailer or product coverage;
+- universal retailer/product coverage;
 - product-market fit.
 
-## Public / private boundary
-
-Private collection logic, operator workflows, exact schemas, raw evidence, infrastructure details and implementation source are intentionally not published.
-
-See [PUBLIC_BOUNDARY.md](PUBLIC_BOUNDARY.md).
+The source implementation remains private. This repository exposes the decision quality and implementation proof without publishing the collection/runtime blueprint.
