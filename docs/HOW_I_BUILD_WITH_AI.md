@@ -1,42 +1,48 @@
-# AI in the PriceBriefs workflow
+# How I direct the AI-assisted PriceBriefs build
 
-AI is useful for moving quickly across implementation and review. It is not allowed to become the source of truth for a pricing decision.
+PriceBriefs is built with heavy use of AI agents/models. My role is to define and direct the product/system, not to claim authorship of every line of code.
 
-## Where it helps
+## What I own
 
-- exploring implementation approaches;
-- drafting and revising code candidates;
-- investigating data/integration behavior;
-- generating edge cases and tests;
-- reviewing assumptions and documentation.
+- researching the pricing/competitive-intelligence problem and deciding what product direction to pursue;
+- defining the high-level blueprint and required decision behavior;
+- creating specialist personas/experts and assigning them responsibilities;
+- setting constraints, acceptance criteria and quality gates;
+- requiring evidence discipline, refusal states and repeated review;
+- sending work back for revision when it does not meet the quality bar.
 
-## What stays explicit
+## What AI handles heavily
 
-The system still needs a human-owned definition of:
+- implementation and code generation/revision;
+- technical-option exploration;
+- data/integration investigation;
+- edge-case and test generation;
+- technical review and documentation.
 
-- product identity;
-- source qualification;
-- freshness and availability;
-- which observations may influence a comparison;
-- which decision states exist;
-- when the correct output is `INSUFFICIENT_EVIDENCE`.
+I do **not** claim that I independently selected or hand-authored every contract, hash mechanism, renderer, data structure or code path.
 
 ## Working loop
 
 ```text
-commercial question
-      ↓
-identity + source constraints
-      ↓
-AI-assisted implementation
-      ↓
-deterministic validation
-      ↓
-bounded decision
-      ↓
-evidence review / refusal
+research commercial problem
+        ↓
+define product + blueprint + quality bar
+        ↓
+assign specialist AI personas / agents
+        ↓
+AI-assisted implementation and iteration
+        ↓
+deterministic checks / evidence / quality gates
+        ↓
+accept, reject or send back for revision
 ```
 
-The point is not to remove judgment. The point is to make AI useful **inside** a system whose evidence boundary remains inspectable.
+The blueprint requires observations to pass identity/evidence constraints before they can support a commercial review decision. The low-level implementation used to satisfy that requirement may come from the AI-assisted implementation process unless I explicitly state otherwise.
+
+## Interview boundary
+
+I can explain the product problem, why the decision flow exists, the blueprint I required, how I structured the AI workflow, the quality gates I demanded and what the current evidence supports.
+
+For a low-level technical choice, I will distinguish between **a requirement I set** and **a technical choice made inside the AI-assisted implementation process**.
 
 For concrete implementation evidence, see [../PROOF.md](../PROOF.md).
