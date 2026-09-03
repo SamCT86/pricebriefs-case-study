@@ -4,6 +4,8 @@ This file is the public proof layer behind the PriceBriefs case study.
 
 It is based on a fresh read of the private implementation repository. No private source code, raw buyer data, internal endpoints, infrastructure credentials or reproducible collection logic are copied here.
 
+**Ownership note:** the implementation evidence below is not a claim that I personally hand-authored or independently selected every low-level technical mechanism. My direct role is product research/direction, system blueprint and requirements, expert/persona orchestration, acceptance criteria and quality gates; AI is used heavily in implementation.
+
 ## What is implemented
 
 The current private source contains:
@@ -31,37 +33,17 @@ The current three-product sample produces:
 
 The refusal case exists because no clean in-stock peer is available to support a stronger decision.
 
-That is useful proof of the product rule:
-
-> **No surfaced recommendation may outrun product identity or source evidence.**
-
 ## Verification rules represented in the implementation
 
-The batch builder checks a bounded set of properties before generated output is accepted, including:
-
-- distinct product identity;
-- source qualification;
-- evidence/artifact consistency;
-- eligible peer completeness;
-- refusal of review-required, unavailable, out-of-stock or mismatched evidence as a basis for an unsupported price gap.
-
-Static historical snapshots are deliberately prevented from pretending to be autonomous action authority.
+The implementation checks a bounded set of properties before generated output is accepted, including product identity, source qualification, evidence/artifact consistency, eligible-peer completeness and refusal of unsupported evidence as a basis for a stronger price-gap conclusion.
 
 ## Sample-fulfillment proof
 
-The private source also contains a permission-based sample workflow:
+The private source also contains a permission-based sample workflow with a bounded merchant/competitor scope, isolated operator workspaces, SHA-256-bound prepared artifacts and delivery verification.
 
-- one merchant storefront;
-- exactly three merchant product URLs;
-- a bounded set of competitor domains;
-- explicit authorization for public collection;
-- operator workspaces kept outside the source repository;
-- prepared artifacts bound by SHA-256;
-- delivery verification that checks the expected brief/evidence bundle before a delivery can be considered verified.
+This repo exposes the **existence and purpose** of those mechanisms, not the reproducible private implementation.
 
-The browser intake is convenience. The operator contract is authoritative.
-
-## A failure I deliberately preserve
+## A preserved failure state
 
 **Scenario:** a page contains a plausible lower price, but the evidence cannot establish a clean comparable in-stock product.
 
@@ -76,8 +58,6 @@ PriceBriefs outcome:
 ```text
 INSUFFICIENT_EVIDENCE
 ```
-
-That choice reduces output volume but increases the meaning of the outputs that survive.
 
 ## Sanitized examples
 
@@ -98,11 +78,13 @@ The examples are synthetic/redacted representations of the implemented decision 
 | Autonomous production price changes | Not claimed |
 | Product-market fit | Not claimed |
 
-## What I can defend in an interview
+## What I personally own and can explain
 
-- why identity must be established before price comparison;
-- why collection and commercial decision are separate layers;
-- how a generated brief can be bound back to its evidence;
-- why an out-of-stock or mismatched peer should stop a recommendation;
-- why refusal states improve a commercial automation system;
-- where AI speeds the implementation and where deterministic rules must remain authoritative.
+- why I pursued the competitive-price-intelligence problem and what decision problem I wanted the product to improve;
+- the high-level blueprint from observation to evidence-backed commercial review;
+- how I structured specialist AI personas/agents to research, build, critique and revise the system;
+- the quality gates I required around weak evidence, refusal states and reviewability;
+- what the current proof supports and what it does not support;
+- how I direct further iteration when AI-generated work does not meet the system or quality requirements.
+
+For a specific hash implementation, contract shape, renderer choice or code path, I distinguish between **implementation evidence** and **a decision I personally made**.
