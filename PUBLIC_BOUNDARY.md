@@ -1,6 +1,6 @@
 # Public disclosure boundary
 
-This repository contains a **bounded public reference implementation** for technical evaluation. It is not a mirror or source release of the private PriceBriefs production collection/runtime system.
+This repository contains a **bounded public reference implementation** for inspecting and running one engineering invariant. It is not a mirror or source release of the private PriceBriefs production collection/runtime system.
 
 ## Intentionally public
 

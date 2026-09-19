@@ -4,7 +4,7 @@ This file is the public proof layer behind the PriceBriefs case study.
 
 It is based on a fresh read of the private implementation repository. No private source code, raw buyer data, internal endpoints, infrastructure credentials or reproducible collection logic are copied here.
 
-**Ownership note:** the implementation evidence below is not a claim that I personally hand-authored or independently selected every low-level technical mechanism. My direct role is product research/direction, system blueprint and requirements, expert/persona orchestration, acceptance criteria and quality gates; AI is used heavily in implementation.
+**Engineering ownership:** AI assistance is used throughout the implementation workflow. I remain accountable for problem framing, architecture constraints, reviewing and debugging changes, acceptance/test gates and release decisions. Where this document cites behavior that remains in the private implementation, it is labeled as implementation evidence rather than as a claim about manual keystroke authorship.
 
 ## What is implemented
 
@@ -78,7 +78,7 @@ The examples are synthetic/redacted representations of the implemented decision 
 | Autonomous production price changes | Not claimed |
 | Product-market fit | Not claimed |
 
-## What I personally own and can explain
+## Engineering decisions I own and can explain
 
 - why I pursued the competitive-price-intelligence problem and what decision problem I wanted the product to improve;
 - the high-level blueprint from observation to evidence-backed commercial review;
