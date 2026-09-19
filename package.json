@@ -1,7 +1,8 @@
 {
   "name": "pricebriefs-reference",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
+  "description": "Public executable reference for evidence-gated competitive price decisions and refusal states.",
   "type": "module",
   "scripts": { "test": "node --test", "verify": "node --test" },
   "engines": { "node": ">=20" }
