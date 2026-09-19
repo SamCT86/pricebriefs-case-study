@@ -1,0 +1,8 @@
+{
+  "merchant": { "productKey": "synthetic-sku-1", "price": 120, "currency": "USD" },
+  "peers": [
+    { "id": "clean-peer", "productKey": "synthetic-sku-1", "price": 100, "inStock": true, "fresh": true },
+    { "id": "wrong-product", "productKey": "synthetic-sku-2", "price": 1, "inStock": true, "fresh": true },
+    { "id": "out-of-stock", "productKey": "synthetic-sku-1", "price": 90, "inStock": false, "fresh": true }
+  ]
+}
