@@ -1,32 +1,34 @@
 # Public disclosure boundary
 
-This repository is a **public engineering case study**, not an open-source release and not a mirror of the private implementation repository.
+This repository contains a **bounded public reference implementation** for technical evaluation. It is not a mirror or source release of the private PriceBriefs production collection/runtime system.
 
 ## Intentionally public
 
-- the competitive-intelligence problem;
-- the observation → truth → decision → evidence model;
-- selected engineering trade-offs;
-- defensible technical context;
+- the evidence-gated competitive-intelligence problem;
+- a small independently bounded price-decision reference;
+- synthetic market fixtures, adversarial tests and public CI;
+- evidence eligibility and `WATCH | INSUFFICIENT_EVIDENCE` behavior;
+- selected engineering trade-offs and refusal-state philosophy;
 - the AI-assisted workflow at a non-sensitive level;
-- verification and refusal-state philosophy;
-- current status and explicit non-claims.
+- explicit non-claims.
 
 ## Intentionally private
 
-- application source code;
-- internal prompts or agent instructions;
-- exact schemas, data contracts and decision implementation;
-- private collection logic and operator workflows;
-- raw evidence and private fixtures;
-- credentials, infrastructure details and environment configuration;
-- private repository paths, SHAs and internal document names;
-- unpublished endpoints;
-- private commercial experiments and roadmap;
-- implementation details that would materially reproduce the system.
+- production collectors, adapters and ingestion/runtime source code;
+- real source artifacts, customer/operator workspaces and private fixtures;
+- production data contracts, infrastructure and environment configuration;
+- credentials, secrets and unpublished endpoints;
+- proprietary decision/runtime workflows and unreleased commercial logic;
+- internal prompts/agent instructions and private repository/document state;
+- private commercial experiments and roadmap sequencing;
+- implementation details that would materially reproduce the commercial system.
 
-## Why
+## Release rule
 
-The employer-facing signal is the judgment: **how I prevent bad data from becoming a confident commercial answer, how I preserve refusal states, and how I use AI without giving it authority over the evidence.**
+Public proof is selected by default-deny:
 
-Public does not mean open source. No license to the private implementation is granted or implied by this case study.
+`PRIVATE SOURCE → MINIMUM PROOF → SYNTHETIC MARKET → IP/SECRET REVIEW → TEST → PUBLIC`
+
+The reference edition demonstrates evidence refusal behavior without publishing production collection or delivery machinery.
+
+No license to the private implementation is granted or implied by this public reference edition.
