@@ -1,5 +1,7 @@
 # PriceBriefs — evidence-gated price intelligence, runnable reference
 
+[![verify-reference](https://github.com/SamCT86/pricebriefs-case-study/actions/workflows/verify-reference.yml/badge.svg)](https://github.com/SamCT86/pricebriefs-case-study/actions/workflows/verify-reference.yml)
+
 A public, executable engineering reference for one PriceBriefs principle: **a plausible lower price is not actionable evidence unless product identity, availability and freshness survive validation.** The production collection/runtime system remains private.
 
 ## Five-minute technical evaluation
@@ -69,6 +71,12 @@ Private:
 - infrastructure, credentials and deployment controls;
 - proprietary ingestion/runtime workflows;
 - unreleased commercial decision logic.
+
+## Related runnable references
+
+- [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) — deterministic commercial truth from contract + evidence.
+- [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — verify observed state before trusting agent mutations.
+- [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) — exact-artifact evidence and reproducible recheck boundaries.
 
 ## Not claimed
 
