@@ -4,7 +4,7 @@
 
 A public, executable engineering reference for one PriceBriefs principle: **a plausible lower price is not actionable evidence unless product identity, availability and freshness survive validation.** The production collection/runtime system remains private.
 
-## Five-minute technical evaluation
+## Run locally
 
 ```bash
 git clone https://github.com/SamCT86/pricebriefs-case-study.git
@@ -40,7 +40,7 @@ It demonstrates that:
 - peer ordering does not change the decision;
 - this static reference never escalates itself to autonomous `ACT`.
 
-The tests are the primary evaluator surface. Change the market fixture and observe which evidence is accepted or suppressed.
+The tests are the primary executable surface. Change the market fixture and observe which evidence is accepted or suppressed.
 
 ## Production system
 
@@ -48,11 +48,11 @@ The private implementation is materially broader and includes collection/normali
 
 This repository is a **reference edition**, not a source release of the commercial system.
 
-## How I build
+## Engineering ownership
 
-I use AI agents heavily for implementation, investigation, testing and critique. My ownership is the commercial problem, evidence doctrine, system requirements, acceptance criteria, red-team cases and the decision to accept or reject the resulting implementation.
+AI tools are part of my implementation workflow. I use them to accelerate investigation, implementation, testing and review, while remaining accountable for the system boundary, architecture constraints, code review, debugging, acceptance criteria and the decision to ship or reject a change.
 
-I do not claim to have hand-written every line. The intended engineering signal is the ability to make an AI-assisted decision system refuse unsupported conclusions instead of optimizing for confident-looking output.
+The useful question here is not who typed each token. It is whether the behavior is explicit, testable, reproducible and safe under failure. The executable tests and design trade-offs in this repository are the public evidence for that claim.
 
 ## Public/private boundary
 
