@@ -1,106 +1,75 @@
-# PriceBriefs — evidence-backed competitive price intelligence
+# PriceBriefs — evidence-gated price intelligence, runnable reference
 
-**Sarmad Tawfeek · AI systems · technical implementation · automation**  
-**Status:** Building / technical falsification  
-**Portfolio:** https://sarmadtawfeek.se/
+A public, executable engineering reference for one PriceBriefs principle: **a plausible lower price is not actionable evidence unless product identity, availability and freshness survive validation.** The production collection/runtime system remains private.
 
-## My role in this build
+## Five-minute technical evaluation
 
-I researched the product opportunity, chose the direction, defined the system blueprint and quality expectations, and used specialist AI personas/agents to drive implementation and iteration.
-
-The implementation is heavily AI-assisted. I do **not** claim that I personally hand-wrote every line of code or independently selected every low-level technical mechanism. My direct ownership is the product problem, high-level system requirements, expert/persona orchestration, acceptance criteria and quality gates.
-
-Price data is easy to collect and easy to misuse. PriceBriefs is built around a stricter rule:
-
-> **An observation is not a commercial decision until product identity, source quality and evidence eligibility survive review.**
-
-```text
-OBSERVATION → TRUTH → COMMERCIAL IMPORTANCE → DECISION → EVIDENCE
+```bash
+git clone https://github.com/SamCT86/pricebriefs-case-study.git
+cd pricebriefs-case-study
+npm test
 ```
 
-## What exists today
+Then inspect:
 
-The private implementation currently includes a deterministic **three-product public sample** derived from hash-bound artifact evidence rather than hand-written demo observations.
+- `src/reference-price-decision.mjs` — bounded evidence-to-decision reference;
+- `test/reference-price-decision.test.mjs` — refusal-state and determinism tests;
+- `fixtures/synthetic-market.json` — synthetic merchant/peer evidence;
+- `PROOF.md` — broader implementation evidence;
+- `PUBLIC_BOUNDARY.md` — what intentionally stays private.
 
-That sample produces:
+## What this proves
 
-- two bounded `WATCH` decisions;
-- one `INSUFFICIENT_EVIDENCE` refusal because no clean in-stock peer supports a stronger conclusion.
-
-Current private-source evidence also includes:
-
-- TypeScript contracts and deterministic validation;
-- a manifest-driven batch builder;
-- deterministic rendering of generated briefs;
-- CI with strict TypeScript checking and Node tests;
-- verification that generated output is current;
-- permission-based sample intake and isolated operator-workspace preparation;
-- hash checks around prepared and delivered artifacts.
-
-**Start with the evidence layer:** [PROOF.md](PROOF.md)
-
-## System boundary
+The public reference preserves the core commercial safety boundary:
 
 ```text
-Market observation
-       ↓
-Product identity check
-       ↓
-Source + availability + freshness checks
-       ↓
-Commercial interpretation
-       ↓
-WATCH / bounded review state / INSUFFICIENT_EVIDENCE
-       ↓
-Evidence-bound brief
+market observations
+→ product identity / stock / freshness eligibility
+→ WATCH | INSUFFICIENT_EVIDENCE
 ```
 
-The system is allowed to produce **less output** when the evidence is weak.
+It demonstrates that:
 
-These are current system requirements/behaviors; they are not a claim that I personally originated every low-level mechanism used to implement them.
+- a clean comparable peer can support a bounded `WATCH` state;
+- no eligible peer yields `INSUFFICIENT_EVIDENCE`;
+- out-of-stock evidence cannot drive a price gap;
+- cross-product evidence cannot drive a price gap;
+- stale evidence cannot drive a price gap;
+- peer ordering does not change the decision;
+- this static reference never escalates itself to autonomous `ACT`.
 
-## A failure state the system preserves
+The tests are the primary evaluator surface. Change the market fixture and observe which evidence is accepted or suppressed.
 
-A competitor page may contain a plausible lower price while product identity is ambiguous or the only comparable peer is out of stock.
+## Production system
 
-A weak automation turns that into a price-gap recommendation anyway. PriceBriefs instead allows the path to end as `INSUFFICIENT_EVIDENCE`.
+The private implementation is materially broader and includes collection/normalization, artifact and witness verification, hash-bound evidence, batch generation, delivery verification, operator workspaces and customer-facing surfaces. None of that private runtime or infrastructure is published here.
 
-## How AI fits
+This repository is a **reference edition**, not a source release of the commercial system.
 
-AI agents/models are used heavily for implementation, data/integration investigation, edge-case generation, tests, review and iteration.
+## How I build
 
-My role is to define the commercial problem, blueprint the required system behavior, structure the expert/persona workflow, set the quality bar and require the system to pass evidence/quality gates before I accept stronger claims.
+I use AI agents heavily for implementation, investigation, testing and critique. My ownership is the commercial problem, evidence doctrine, system requirements, acceptance criteria, red-team cases and the decision to accept or reject the resulting implementation.
 
-More detail: [docs/HOW_I_BUILD_WITH_AI.md](docs/HOW_I_BUILD_WITH_AI.md)
+I do not claim to have hand-written every line. The intended engineering signal is the ability to make an AI-assisted decision system refuse unsupported conclusions instead of optimizing for confident-looking output.
 
-## Technical context
+## Public/private boundary
 
-`TypeScript` · `Node.js` · `deterministic contracts` · `SHA-256 evidence binding` · `CI` · `automated tests`
+Public here:
 
-Technology is implementation context, not a claim that I personally selected or hand-authored every component.
+- bounded decision logic;
+- synthetic market fixtures;
+- adversarial tests;
+- CI;
+- non-proprietary evidence documentation.
 
-## Inspect the case study
+Private:
 
-- [Observable proof](PROOF.md)
-- [Sanitized decision examples](examples/sanitized-brief-decisions.json)
-- [System view](docs/SYSTEM_VIEW.md)
-- [System requirements & trade-offs](docs/DECISIONS.md)
-- [Verification approach](docs/VERIFICATION.md)
-- [Public / private boundary](PUBLIC_BOUNDARY.md)
+- production collectors and adapters;
+- customer/operator workspaces and real source artifacts;
+- infrastructure, credentials and deployment controls;
+- proprietary ingestion/runtime workflows;
+- unreleased commercial decision logic.
 
 ## Not claimed
 
-- customer outcome metrics;
-- autonomous price-changing authority;
-- broad production-scale ingestion;
-- universal retailer/product coverage;
-- product-market fit;
-- personal authorship of every implementation detail.
-
-The source implementation remains private. This repository shows how I frame and direct an AI-assisted decision system while keeping the underlying collection/runtime blueprint private.
-
-## Related engineering case studies
-
-- [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) — artifact-bound verification and recheck discipline.
-- [Billable Meetings OS](https://github.com/SamCT86/billable-meetings-os-case-study) — contract + evidence automation with a real review state.
-- [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) — verified outcomes before broader reliability claims.
+This repository does not claim customer ROI, autonomous price-changing authority, universal retailer coverage, product-market fit, or that this small reference implementation is the production PriceBriefs runtime.
