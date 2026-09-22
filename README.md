@@ -8,7 +8,7 @@ Competitive pricing looks simple until the input data is wrong.
 
 A lower price might belong to another product, an item that is out of stock, stale evidence, or a page whose identity changed during collection. I built this reference to show how those problems can be handled before the data reaches a commercial decision.
 
-> **A lower price is not actionable evidence unless product identity, availability, and freshness pass validation.**
+> **A lower price is not actionable evidence unless product identity, currency, source qualification, trace identity, availability, and freshness pass validation.**
 
 ## Try it
 
@@ -22,7 +22,8 @@ npm test
 
 ```text
 raw market observations
--> identity / stock / freshness checks
+-> evidence-contract / identity / currency checks
+-> source qualification / stock / freshness checks
 -> comparable evidence set
 -> WATCH | INSUFFICIENT_EVIDENCE
 ```
@@ -35,7 +36,15 @@ The reference demonstrates that:
 4. cross-product evidence cannot drive a price gap;
 5. stale evidence cannot drive a price gap;
 6. peer ordering does not change the result;
-7. the reference never promotes itself to autonomous `ACT`.
+7. unqualified or malformed source evidence cannot drive a price gap;
+8. missing or duplicate evidence IDs cannot support an ambiguous decision;
+9. raw cross-currency prices are refused rather than compared directly;
+10. malformed truthy stock/freshness values cannot bypass boolean checks;
+11. the reference never promotes itself to autonomous `ACT`.
+
+### Public source-qualification boundary
+
+`sourceQualified` is an explicit caller-supplied qualification state in this bounded reference. The evaluator requires it to be a real boolean and refuses missing or false qualification, but it does **not** authenticate a retailer, re-run private collection checks, or prove source authority by itself. Those collection/runtime mechanisms remain outside this public slice.
 
 ## What to inspect
 
