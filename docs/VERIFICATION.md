@@ -7,11 +7,11 @@ PriceBriefs treats evidence quality as part of the product rather than a cleanup
 ### 1. Observation integrity
 The system needs a usable observation, not merely a scraped value.
 
-### 2. Product identity
-The observation must belong to the intended product before comparison can be meaningful.
+### 2. Evidence and comparison identity
+The observation must have a traceable unique evidence ID, belong to the intended product, and use the merchant comparison currency before a raw price gap can be meaningful.
 
 ### 3. Source qualification
-A technically reachable page is not automatically a sufficiently strong source for a commercial decision.
+A technically reachable page is not automatically a sufficiently strong source for a commercial decision. The public evaluator requires an explicit boolean qualification state and refuses missing, malformed or false qualification; it does not itself authenticate the source.
 
 ### 4. Eligibility
 Availability, freshness and other constraints determine whether an observation may influence the decision.
@@ -34,8 +34,10 @@ That state is preferable to manufacturing a price gap from incomplete or mismatc
 
 ## What AI-assisted implementation must survive
 
-- Are the compared products actually the intended products?
-- Is the source qualified for the claim being made?
+- Is each decision-driving observation uniquely traceable?
+- Are the compared products actually the intended products and currency?
+- Is the source explicitly qualified for the claim being made?
+- Are stock/freshness states real booleans rather than truthy malformed values?
 - Is the observation current and eligible?
 - Is the generated brief derived from supporting evidence?
 - Is the commercial recommendation narrower than or equal to the evidence strength?
