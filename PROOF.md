@@ -37,6 +37,12 @@ The refusal case exists because no clean in-stock peer is available to support a
 
 The implementation checks a bounded set of properties before generated output is accepted, including product identity, source qualification, evidence/artifact consistency, eligible-peer completeness and refusal of unsupported evidence as a basis for a stronger price-gap conclusion.
 
+## Public executable evidence gate
+
+The public reference now makes a bounded subset of that evidence discipline directly inspectable. A peer can influence `WATCH` only when it has a unique non-empty evidence ID, matching product and currency identity, an explicit qualified-source state, strict boolean stock/freshness states, and a valid finite non-negative price. Duplicate IDs, malformed evidence contracts, unqualified sources and cross-currency observations are refused rather than allowed to manufacture a stronger price-gap conclusion.
+
+This does **not** mean the public reference authenticates source ownership or reproduces the private collector. `sourceQualified` is an input contract state whose absence, malformed type or false value fails closed.
+
 ## Sample-fulfillment proof
 
 The private source also contains a permission-based sample workflow with a bounded merchant/competitor scope, isolated operator workspaces, SHA-256-bound prepared artifacts and delivery verification.

@@ -8,7 +8,8 @@ This is a deliberately public abstraction. It explains the decision flow without
 └─────────┬────────┘
           ↓
 ┌────────────────────────┐
-│ Product identity check │
+│ Evidence identity      │
+│ + product/currency     │
 │ + source qualification │
 └───────────┬────────────┘
             ↓
@@ -25,13 +26,13 @@ This is a deliberately public abstraction. It explains the decision flow without
 └────────────────────────┘
 ```
 
-## Boundary 1 — product identity
+## Boundary 1 — evidence and comparison identity
 
-A comparison is only meaningful when the system has enough evidence that it is comparing the intended products.
+A comparison is only meaningful when the system has traceable evidence IDs and enough identity to show it is comparing the intended product in the same currency. Duplicate evidence IDs and cross-currency raw prices are not decision-grade inputs.
 
 ## Boundary 2 — source quality
 
-An observation should not become decision-grade merely because it is technically retrievable.
+An observation should not become decision-grade merely because it is technically retrievable. The public slice requires an explicit boolean source-qualification state; it does not authenticate the source itself.
 
 ## Boundary 3 — availability and freshness
 
