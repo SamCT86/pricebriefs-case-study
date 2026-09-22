@@ -6,7 +6,7 @@
 
 Competitive pricing looks simple until the input data is wrong.
 
-A lower price might belong to another product, an item that is out of stock, stale evidence, or a page whose identity changed during collection. I built this reference to show how those problems can be handled before the data reaches a commercial decision.
+A lower price might belong to another product, an item that is out of stock, stale evidence, or a page whose identity changed during collection. I built this reference because I would rather have software refuse a weak comparison than confidently act on bad evidence.
 
 > **A lower price is not actionable evidence unless product identity, currency, source qualification, trace identity, availability, and freshness pass validation.**
 
@@ -79,17 +79,12 @@ Kept private:
 - proprietary ingestion/runtime workflows;
 - unreleased commercial decision logic.
 
-## Related work
+## What this repo is meant to show
 
-- [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study) - verify AI-agent runs after the model responds.
-- [MachineOutcome](https://github.com/SamCT86/machineoutcome-case-study) - read back external state before trusting a mutation.
-- [Billable Meetings](https://github.com/SamCT86/billable-meetings-os-case-study) - turn commercial rules and meeting evidence into deterministic decisions.
-- [ReleaseProof](https://github.com/SamCT86/releaseproof-case-study) - bind release evidence to the exact artifact being shipped.
+The point is not that software should change prices automatically. It is that a commercial decision should not be built on a comparison the system cannot defend.
 
-## Engineering accountability
+This public reference does **not** claim customer ROI, autonomous price-changing authority, universal retailer coverage, product-market fit, or production equivalence.
 
-I use AI tools as part of my implementation workflow. I remain responsible for the problem framing, architecture, debugging, acceptance criteria, evidence design, tests, and release decisions.
+I use AI tools during implementation, but I own the evidence contract, refusal states, debugging, tests, and the final judgment about what the software is allowed to conclude.
 
-## Scope
-
-This repository does not claim customer ROI, autonomous price-changing authority, universal retailer coverage, product-market fit, or that this public reference is the production PriceBriefs runtime.
+For my main Applied AI runtime work, see [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study).
