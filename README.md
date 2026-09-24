@@ -6,7 +6,7 @@
 
 Competitive pricing looks simple until the input data is wrong.
 
-A lower price might belong to another product, an item that is out of stock, stale evidence, or a page whose identity changed during collection. I built this reference because I would rather have software refuse a weak comparison than confidently act on bad evidence.
+A lower price might belong to another product, an item that is out of stock, stale evidence, or a page whose identity changed during collection. I use this reference to show the safer pattern: refuse a weak comparison instead of confidently acting on bad evidence.
 
 > **A lower price is not actionable evidence unless product identity, currency, source qualification, trace identity, availability, and freshness pass validation.**
 
@@ -85,6 +85,6 @@ The point is not that software should change prices automatically. It is that a 
 
 This public reference does **not** claim customer ROI, autonomous price-changing authority, universal retailer coverage, product-market fit, or production equivalence.
 
-I use AI tools during implementation, but I own the evidence contract, refusal states, debugging, tests, and the final judgment about what the software is allowed to conclude.
+This reference is AI-assisted. My role is to define the commercial problem and evidence contract, direct the implementation, set acceptance criteria, test the refusal states, verify the behavior and make the final judgment about what the system is allowed to conclude. It is not a claim that I manually wrote every line.
 
 For the broader portfolio and how these public references fit together, see [my GitHub profile](https://github.com/SamCT86) or [sarmadtawfeek.se](https://sarmadtawfeek.se).
