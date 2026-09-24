@@ -87,4 +87,4 @@ This public reference does **not** claim customer ROI, autonomous price-changing
 
 I use AI tools during implementation, but I own the evidence contract, refusal states, debugging, tests, and the final judgment about what the software is allowed to conclude.
 
-For my main Applied AI runtime work, see [Agent Forecast Foundry](https://github.com/SamCT86/agent-forecast-foundry-case-study).
+For the broader portfolio and how these public references fit together, see [my GitHub profile](https://github.com/SamCT86) or [sarmadtawfeek.se](https://sarmadtawfeek.se).
